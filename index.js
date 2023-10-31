@@ -66,7 +66,7 @@ const isAuthenticated = (req, res, next) => {
     return res.status(401).json({ message: "Unauthorized: No token provided" });
   }
   // console.log(authHeader);
-  jwt.verify(token, process.env.SECRET_KEY, (err, user) => {
+  jwt.verify(token, "bhaibhaibhai, (err, user) => {
     if (err) {
       if (err.name === "TokenExpiredError") {
         return res.status(401).json({ message: "Token expired" });
