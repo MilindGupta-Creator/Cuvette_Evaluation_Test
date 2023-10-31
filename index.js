@@ -198,10 +198,11 @@ app.use("/api/quiz", quizRouter);
 
 app.listen(PORT, () => {
   mongoose
-    .connect(process.env.MONGO_URL, {
+    .connect("mongodb+srv://milindji:milind1234@quizzie.qbpvksb.mongodb.net/?retryWrites=true&w=majority", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
     .then(() => console.log(`Server running on http://localhost:${PORT}`))
     .catch((error) => console.error(error));
 });
+
