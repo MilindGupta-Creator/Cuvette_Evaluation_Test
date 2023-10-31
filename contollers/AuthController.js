@@ -43,7 +43,7 @@ const login = async (req, res) => {
     if (user) {
       const passwordMatched = await bcrypt.compare(password, user.password);
       if (passwordMatched) {
-        const jwToken = jwt.sign(user.toJSON(), "bhaibhaibhai, {
+        const jwToken = jwt.sign(user.toJSON(), "bhaibhaibhai", {
           expiresIn: "1h",
         });
         res.cookie("jwt", jwToken, {
