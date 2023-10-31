@@ -23,7 +23,7 @@ const signup = async (req,res)=>{
           await newUser.save();
     
           // Generate JWT
-          const jwToken = jwt.sign(newUser.toJSON(), "bhaibhaibhai, {
+          const jwToken = jwt.sign(newUser.toJSON(), "bhaibhaibhai", {
             expiresIn: "24h",
           });
     
