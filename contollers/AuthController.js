@@ -29,7 +29,7 @@ const signup = async (req,res)=>{
     
           res.cookie('jwt', jwToken, { sameSite: 'None', secure: true });
     
-          return res.redirect(302, `${process.env.REACT_URL}/adminpanel`);
+          return res.redirect(302, "http://localhost:3000/adminpanel");
         }
       }  catch (error) {
         return res.status(500).json({ message: 'An error occurred', error: error.message });
@@ -50,9 +50,7 @@ const login = async (req, res) => {
           sameSite: "None",
           secure: true,
         });
-        res.redirect(302, `${process.env.REACT_URL}/adminpanel`);
-
-
+        res.redirect(302, "http://localhost:3000/adminpanel");
         return;
       } else {
         res.json({
