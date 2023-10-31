@@ -23,7 +23,7 @@ const signup = async (req,res)=>{
           await newUser.save();
     
           // Generate JWT
-          const jwToken = jwt.sign(newUser.toJSON(), process.env.SECRET_KEY, {
+          const jwToken = jwt.sign(newUser.toJSON(), "bhaibhaibhai, {
             expiresIn: "24h",
           });
     
@@ -43,7 +43,7 @@ const login = async (req, res) => {
     if (user) {
       const passwordMatched = await bcrypt.compare(password, user.password);
       if (passwordMatched) {
-        const jwToken = jwt.sign(user.toJSON(), process.env.SECRET_KEY, {
+        const jwToken = jwt.sign(user.toJSON(), "bhaibhaibhai, {
           expiresIn: "1h",
         });
         res.cookie("jwt", jwToken, {
